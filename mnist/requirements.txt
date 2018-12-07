@@ -2,8 +2,6 @@ numpy==1.14.0
 Pillow==5.0.0
 python-mnist==0.5
 tensorflow==1.5.0
-tensorflow-serving-api==1.4.0
-
 
 Shapely==1.5.13
 Flask==0.10.1
