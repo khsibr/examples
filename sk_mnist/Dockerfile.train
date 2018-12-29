@@ -10,4 +10,4 @@ WORKDIR /work
 
 COPY ./train.py.py /work/train.py.py
 
-CMD python train.py.py
+CMD python train.py
