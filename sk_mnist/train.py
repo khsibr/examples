@@ -8,6 +8,8 @@ from sklearn.utils import shuffle
 
 data_path = os.environ.get('DATA_PATH') or '/tmp/data/'
 model_path = os.environ.get('MODEL_PATH') or '/tmp/model/'
+if not os.path.exists(model_path):
+    os.mkdir(model_path)
 
 mnist_images = np.load(os.path.join(data_path, "train_data.npy"))
 mnist_labels = np.load(os.path.join(data_path, "train_labels.npy"))
