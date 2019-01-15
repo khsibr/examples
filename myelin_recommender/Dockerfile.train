@@ -11,6 +11,7 @@ RUN mkdir /work/myelin_recommender/
 
 COPY ./train.py /work/myelin_recommender/train.py
 COPY ./cf_model.py /work/myelin_recommender/cf_model.py
+COPY ./utils.py /work/myelin_recommender/utils.py
 COPY ./__init__.py /work/myelin_recommender/__init__.py
 
 CMD python -m myelin_recommender.train
