@@ -1,12 +1,8 @@
 import os
 
-import numpy as np
-from tensorflow.examples.tutorials.mnist import input_data
-from surprise import Dataset
 from six.moves.urllib.request import urlretrieve
 import zipfile
 import pandas as pd
-
 
 def download_movielens_data(name, path):
 
