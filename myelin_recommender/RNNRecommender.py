@@ -1,11 +1,11 @@
-from sklearn.externals import joblib
+#!/usr/bin/env python3
+
 import os
-from myelin_recommender.cf_model import CFModel
-from myelin_recommender.utils import load_obj
+from model.cf_model import CFModel
+from model.utils import load_obj
 import numpy as np
 
 model_path = os.environ.get('MODEL_PATH') or '/tmp/model/'
-
 
 class RNNRecommender(object):
 	def __init__(self):

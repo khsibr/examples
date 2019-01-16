@@ -3,8 +3,8 @@ import os
 import pandas as pd
 import math
 from keras.callbacks import EarlyStopping, ModelCheckpoint
-from myelin_recommender.cf_model import CFModel
-from myelin_recommender.utils import save_obj
+from model.cf_model import CFModel
+from model.utils import save_obj
 
 data_path = os.environ.get('DATA_PATH') or '/tmp/data/'
 model_path = os.environ.get('MODEL_PATH') or '/tmp/model/'

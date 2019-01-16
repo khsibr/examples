@@ -1,6 +1,7 @@
+#!/usr/bin/env python3
+
 import pickle
 import os
-
 
 def save_obj(obj, path, name):
 	file_name = os.path.join(path, name + '.pkl')
