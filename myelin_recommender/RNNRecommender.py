@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 
 import os
-from model.cf_model import CFModel
-from model.utils import load_obj
+from myelin_model.cf_model import CFModel
+from myelin_model.utils import load_obj
 import numpy as np
 
 model_path = os.environ.get('MODEL_PATH') or '/tmp/model/'

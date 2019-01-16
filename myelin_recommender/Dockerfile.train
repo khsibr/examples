@@ -9,7 +9,7 @@ WORKDIR /work
 
 RUN mkdir /work/myelin_recommender/
 
-COPY model /work/myelin_recommender/model
+COPY myelin_model /work/myelin_recommender/myelin_model
 COPY train.py /work/myelin_recommender/train.py
 
 CMD python -m myelin_recommender.train
