@@ -2,6 +2,8 @@ FROM python:3.6
 
 RUN pip3 install --upgrade pip
 
+RUN apt-get update && apt-get install libopenblas-dev
+
 COPY requirements.txt requirements.txt
 RUN pip install -r  requirements.txt
 
