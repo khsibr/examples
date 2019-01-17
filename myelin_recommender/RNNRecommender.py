@@ -2,6 +2,7 @@ import os
 from myelin_model.cf_model import CFModel
 from myelin_model.utils import load_obj
 import numpy as np
+import sys
 
 model_path = os.environ.get('MODEL_PATH') or '/tmp/model/'
 
@@ -19,7 +20,9 @@ class RNNRecommender(object):
 		return self.trained_model.rate(user_id - 1, movie_id - 1)
 
 	def predict(self, X, feature_names):
-		print("Getting this from crap seldon")
-		print(X)
+		print("Getting this from crap seldon", file=sys.stdout)
+		print(X, file=sys.stdout)
+		print("Getting this from crap seldon", file=sys.stderr)
+		print(X, file=sys.stderr)
 		predictions = np.apply_along_axis(self.predict_rating, axis=1, arr=X)
 		return predictions
