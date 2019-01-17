@@ -8,7 +8,7 @@ data_path = os.environ.get('DATA_PATH') or '/tmp/data/'
 mnist_images = np.load(os.path.join(data_path, "train_data.npy"))
 
 address = "35.234.144.51:80"
-endpoint = "ml-recommender-all23-764357785-2539877511"
+endpoint = "ml-recommender-all24-2642664409-2539877511"
 
 url = "http://%s/%s/predict" % (address, endpoint)
 data = [[10, 2], [10, 3]]

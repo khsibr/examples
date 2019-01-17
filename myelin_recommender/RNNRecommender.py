@@ -12,6 +12,7 @@ class RNNRecommender(object):
 		self.trained_model = CFModel(model_parameters["max_userid"], model_parameters["max_movieid"],
 									 model_parameters["k_factors"])
 		self.trained_model.load_weights(os.path.join(model_path, 'weights.h5'))
+		self.trained_model._make_predict_function()
 		self.class_names = ["class:rating"]
 
 	def predict_rating(self, row):
