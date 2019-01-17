@@ -19,5 +19,7 @@ class RNNRecommender(object):
 		return self.trained_model.rate(user_id - 1, movie_id - 1)
 
 	def predict(self, X, feature_names):
+		print("Getting this from crap seldon")
+		print(X)
 		predictions = np.apply_along_axis(self.predict_rating, axis=1, arr=X)
 		return predictions
