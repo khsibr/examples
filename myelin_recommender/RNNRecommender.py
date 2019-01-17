@@ -1,4 +1,6 @@
 import os
+os.environ['KERAS_BACKEND'] = 'theano'
+
 from myelin_model.cf_model import CFModel
 from myelin_model.utils import load_obj
 import numpy as np

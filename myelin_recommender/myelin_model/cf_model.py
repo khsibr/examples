@@ -1,6 +1,3 @@
-import os
-os.environ['KERAS_BACKEND'] = 'theano'
-
 from keras.layers import Embedding, Reshape, Merge
 from keras.models import Sequential
 import numpy as np
