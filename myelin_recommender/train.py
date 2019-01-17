@@ -4,8 +4,8 @@ os.environ['KERAS_BACKEND'] = 'theano'
 import pandas as pd
 import math
 from keras.callbacks import EarlyStopping, ModelCheckpoint
-from myelin_model.cf_model import CFModel
-from myelin_model.utils import save_obj
+from myelin_recommender.myelin_model.cf_model import CFModel
+from myelin_recommender.myelin_model.utils import save_obj
 
 data_path = os.environ.get('DATA_PATH') or '/tmp/data/'
 model_path = os.environ.get('MODEL_PATH') or '/tmp/model/'
