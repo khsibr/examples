@@ -1,3 +1,8 @@
+from subprocess import STDOUT, check_call
+import os
+check_call(['apt-get', 'install', '-y', 'libopenblas-dev'],
+     stdout=open(os.devnull,'wb'), stderr=STDOUT)
+
 import os
 os.environ['KERAS_BACKEND'] = 'theano'
 os.environ['THEANO_FLAGS'] = "blas.ldflags=\"-L/usr/lib/openblas-base -lopenblas\""
