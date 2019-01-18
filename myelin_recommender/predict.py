@@ -7,16 +7,16 @@ import requests
 data_path = os.environ.get('DATA_PATH') or '/tmp/data/'
 mnist_images = np.load(os.path.join(data_path, "train_data.npy"))
 
-address = "35.234.144.51:80"
-endpoint = "ml-recommender-all38-3300436330-2539877511"
+address = "35.242.185.220:80"
+endpoint = "ml-recommender-all3-3795085459-2539877511"
 
-url = "http://%s/%s/predict" % (address, endpoint)
+url_predict = "http://%s/%s/predict" % (address, endpoint)
 data = [[10, 2], [10, 3]]
 
-jsondata = json.dumps({"data": {"ndarray": data}})
-payload = {'json': jsondata}
+response = requests.post(url_predict, data={'json': json.dumps({"data": {"ndarray": data}})})
+print(response.text)
 
-response = requests.post(url, data=payload, headers={'User-Agent': 'test'})
-json_data = json.loads(response.text)
-prediction = json_data["data"]["ndarray"]
-print(prediction)
+url_feedback = "http://%s/%s/send-feedback" % (address, endpoint)
+feedback = {"response": {"meta": {"routing": {"router": 0}}, "data": {"names": ["a", "b"], "ndarray": [[1.0, 2.0]]}}, "reward": 1}
+response = requests.post(url_feedback, data={'json': json.dumps(feedback)})
+print(response.text)

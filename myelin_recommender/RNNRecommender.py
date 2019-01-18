@@ -28,10 +28,9 @@ class RNNRecommender(object):
 		return self.trained_model.rate(user_id - 1, movie_id - 1)
 
 	def predict(self, X, feature_names):
-		print(X, file=sys.stderr)
 		predictions = np.apply_along_axis(self.predict_rating, axis=1, arr=X)
 		return predictions
 
 	def send_feedback(self, features, feature_names, reward, truth):
-		print("Posting reward: %s" % reward)
+		print("Posting reward: %s" % reward, file=sys.stderr)
 		self.c.post_update("recommender_deploy_accuracy", reward)
