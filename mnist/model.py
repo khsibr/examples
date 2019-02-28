@@ -31,7 +31,7 @@ TF_DATA_DIR = os.getenv("TF_DATA_DIR", "/tmp/data/")
 TF_MODEL_DIR = os.getenv("TF_MODEL_DIR", None)
 TF_EXPORT_DIR = os.getenv("TF_EXPORT_DIR", "mnist/")
 TF_MODEL_TYPE = os.getenv("TF_MODEL_TYPE", "CNN")
-TF_TRAIN_STEPS = int(os.getenv("TF_TRAIN_STEPS", 200))
+TF_TRAIN_STEPS = int(os.getenv("TF_TRAIN_STEPS", 1000))
 TF_BATCH_SIZE = int(os.getenv("TF_BATCH_SIZE", 100))
 TF_LEARNING_RATE = float(os.getenv("TF_LEARNING_RATE", 0.01))
 
