@@ -20,13 +20,16 @@ def train(n_estimators, min_samples_split):
     np.save(os.path.join(data_path, "train_data.npy"), digits.images)
     np.save(os.path.join(data_path, "train_labels.npy"), digits.target)
 
-    data_path = os.environ.get('DATA_PATH') or '/tmp/data/'
+    # data_path = os.environ.get('DATA_PATH') or '/tmp/data/'
     model_path = os.environ.get('MODEL_PATH') or '/tmp/model/'
     if not os.path.exists(model_path):
         os.makedirs(model_path)
+    #
+    # mnist_images = np.load(os.path.join(data_path, "train_data.npy"))
+    # mnist_labels = np.load(os.path.join(data_path, "train_labels.npy"))
 
-    mnist_images = np.load(os.path.join(data_path, "train_data.npy"))
-    mnist_labels = np.load(os.path.join(data_path, "train_labels.npy"))
+    mnist_images = digits.images
+    mnist_labels = digits.target
 
     # To apply a classifier on this data, we need to flatten the image, to
     # turn the data in a (samples, feature) matrix:
